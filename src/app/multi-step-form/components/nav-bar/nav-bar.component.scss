@@ -1,0 +1,113 @@
+@import '/src/assets/styles/colors';
+
+:host {
+
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    padding: 2em;
+    row-gap: 2em;
+    column-gap: 2em;
+    border-radius: 15px;
+    background-image: url('../../../../assets/images/bg-sidebar-desktop.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: default;
+
+    .nav-bar-item {
+
+        display: flex;
+        column-gap: 1em;
+        row-gap: 1em;
+        align-items: center;
+        color: $alabaster;
+
+        .nav-bar-step {
+
+            width: 2em;
+            height: 2em;
+            min-width: 2em;
+            min-height: 2em;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: solid 1px $alabaster;
+            font-family: ubuntuMediumFont;
+
+        }
+
+        .nav-bar-label-container {
+
+            display: flex;
+            flex-direction: column;
+
+            .step {
+
+                font-size: 15px;
+                color: $pastel_blue;
+
+            }
+
+            .label {
+
+                font-family: ubuntuMediumFont;
+
+            }
+
+        }
+
+    }
+
+}
+
+.nav-bar-active {
+
+    background-color: $light_blue;
+    border: none !important;
+    color: $marine_blue;
+
+}
+
+@media (max-width: 1000px) and (min-width: 680px) {
+
+    .nav-bar-item {
+
+        justify-content: center;
+        flex-wrap: wrap;
+        text-align: center;
+
+        &>* {
+            width: 100%;
+        }
+
+    }
+
+}
+
+@media (max-width: 680px) {
+    
+    :host {
+
+        width: auto;
+        flex-direction: row;
+        padding: 2em;
+        column-gap: 1em;
+        justify-content: center;
+        border-radius: 0px;
+        background-image: none;
+
+        .nav-bar-item {
+
+            .nav-bar-label-container {
+
+                display: none;
+
+            }
+
+        }
+
+    }
+
+}
