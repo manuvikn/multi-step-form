@@ -1,0 +1,19 @@
+<div class="form-flex-container">
+
+    <div class="form-fields-container">
+
+        <h1 class="form-title">{{ title }}</h1>
+
+        <p class="form-sub-title">{{ subtitle }}</p>
+
+        <ng-content></ng-content>
+
+    </div>
+
+    <div class="submit-container">
+
+        <ng-content select="#action-buttons"></ng-content>
+
+    </div>
+
+</div>

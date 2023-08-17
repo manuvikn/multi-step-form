@@ -1,0 +1,18 @@
+<div class="slide-container">
+
+    <label for="monthly">Monthly</label>
+    <input type="radio" id="monthly" value="monthly">
+
+    <div class="slide-element-container">
+        <span class="slide-element-first-circle"></span>
+        <span class="slide-element-second-circle"></span>
+        <span class="slide-element-body"></span>
+        <div class="slide-element-shadow-container" (click)="toggleValue()">
+            <span #slideValue class="slide-element-body-circle"></span>
+        </div>
+    </div>
+
+    <label for="yearly">Yearly</label>
+    <input type="radio" id="yearly" value="yearly">
+
+</div>

@@ -1,0 +1,42 @@
+@import '/src/assets/styles/colors';
+
+.input-group {
+
+    display: flex;
+    flex-direction: column;
+    margin: 1.5em 0em;
+    row-gap: 0.5em;
+
+    input {
+
+        font-family: ubuntuBoldFont;
+        padding: 1em;
+        border-radius: 8px;
+        border: 1px solid $light_gray;
+        color: $marine_blue;
+
+        &:focus,
+        &:focus-visible {
+            outline: 1px solid $marine_blue;
+        }
+
+        &:-internal-autofill-selected {
+            background-color: initial;
+        }
+
+        &:-webkit-autofill,
+        &:-webkit-autofill:hover,
+        &:-webkit-autofill:focus {
+            -webkit-text-fill-color: $marine_blue;
+            -webkit-box-shadow: inherit;
+            transition: background-color 5000s ease-in-out 0s;
+        }
+
+        &::placeholder {
+            font-family: ubuntuMediumFont;
+            color: $cool_gray;
+        }
+
+    }
+
+}

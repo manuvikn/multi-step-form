@@ -1,6 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { MultiStepFormInterface } from './interfaces/multi-step-form.interface';
+import { Component, OnInit } from '@angular/core';
 import { MultiStepFormService } from './multi-step-form.service';
+import { FormGroup } from '@angular/forms';
 
 @Component({
     selector: 'app-multi-step-form',
@@ -9,21 +9,12 @@ import { MultiStepFormService } from './multi-step-form.service';
 })
 export class MultiStepFormComponent implements OnInit {
 
-    @Input() multiStepFormData: Array<MultiStepFormInterface> | undefined;
+    multiStepForm: FormGroup | undefined;
 
     constructor(private multiStepFormService: MultiStepFormService) {}
 
     ngOnInit(): void {
-        
-        console.log(this.multiStepFormData);
-
-        if (this.multiStepFormData) {
-
-            this.multiStepFormService.initMultiStepForm( this.multiStepFormData );
-
-        }
-
-
+        this.multiStepForm = this.multiStepFormService.initMultiStepForm();        
     }
 
 }

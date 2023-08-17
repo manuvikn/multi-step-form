@@ -1,9 +1,11 @@
-<div *ngFor="let item of navBarData; let i = index" class="nav-bar-item">
-    <span class="nav-bar-step" [ngClass]="{'nav-bar-active': i == 0}">{{ i + 1 }}</span>
-    <div class="nav-bar-label-container">
-        <span class="step">STEP {{ i + 1 }}</span>
-        <span class="label">
-            {{ item }}
-        </span>
+<ng-container *ngIf="currentStep != undefined">
+    <div *ngFor="let item of navBarData; let i = index" class="nav-bar-item">
+        <span class="nav-bar-step" [ngClass]="{'nav-bar-active': i == currentStep}">{{ i + 1 }}</span>
+        <div class="nav-bar-label-container">
+            <span class="step">STEP {{ i + 1 }}</span>
+            <span class="label">
+                {{ item }}
+            </span>
+        </div>
     </div>
-</div>
+</ng-container>

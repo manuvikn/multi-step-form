@@ -1,0 +1,117 @@
+@import '/src/assets/styles/colors';
+
+.slide-container {
+
+    margin: 2em 0px;
+    padding: 1em;
+    border-radius: 5px;
+    background-color: $magnolia;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 1em;
+    font-family: ubuntuMediumFont;
+
+    input {
+
+        display: none;
+
+    }
+
+    .slide-element-container {
+
+        width: 35px;
+        height: 20px;
+        position: relative;
+
+        .slide-element-first-circle {
+
+            background-color: $marine_blue;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+
+        }
+
+        .slide-element-second-circle {
+
+            background-color: $marine_blue;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            position: absolute;
+            top: 0px;
+            right: 0px;
+
+        }
+
+        .slide-element-body {
+
+            background-color: $marine_blue;
+            width: 16px;
+            height: 20px;
+            position: absolute;
+            top: 0px;
+            left: 9px;
+
+        }
+
+        .slide-element-shadow-container {
+
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+
+            .slide-element-body-circle {
+
+                background-color: $white;
+                width: 12px;
+                height: 12px;
+                border-radius: 50%;
+                position: absolute;
+                left: 0px;
+                margin: 4px;
+
+            }
+
+        }
+
+    }
+
+}
+
+@keyframes moveToRight {
+    from {
+        left: 0px;
+    }
+
+    to {
+        left: 14px;
+    }
+}
+
+@keyframes moveToLeft {
+    from {
+        left: 14px;
+    }
+
+    to {
+        left: 0px;
+    }
+}
+
+.move-to-right {
+    animation-name: moveToRight;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+}
+
+.move-to-left {
+    animation-name: moveToLeft;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+}

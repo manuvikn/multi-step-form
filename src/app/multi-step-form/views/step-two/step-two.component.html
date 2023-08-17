@@ -1,0 +1,49 @@
+<app-wrapper-form *ngIf="stepForm" [currentStep]="1" [title]="'Select your plan'"
+    [subtitle]="'You have the option of monthly or yearly billing.'">
+
+    <form #form="ngForm" [formGroup]="stepForm" (ngSubmit)="navigate($event)">
+
+        <div class="radio-input-group">
+
+            <div class="radio-item" [ngClass]="{'radio-active': stepForm.get( 'plan' )?.value == 'arcade'}">
+                <label for="arcade"></label>
+                <input type="radio" id="arcade" value="arcade" formControlName="plan">
+                <img src="assets/images/icon-arcade.svg">
+                <div class="label-container">
+                    <span class="title">Arcade</span>
+                    <span class="subtitle">$9/mo</span>
+                </div>
+            </div>
+
+            <div class="radio-item" [ngClass]="{'radio-active': stepForm.get( 'plan' )?.value == 'advanced'}">
+                <label for="advanced"></label>
+                <input type="radio" id="advanced" value="advanced" formControlName="plan">
+                <img src="assets/images/icon-advanced.svg">
+                <div class="label-container">
+                    <span class="title">Advanced</span>
+                    <span class="subtitle">$12/mo</span>
+                </div>
+            </div>
+
+            <div class="radio-item" [ngClass]="{'radio-active': stepForm.get( 'plan' )?.value == 'pro'}">
+                <label for="pro"></label>
+                <input type="radio" id="pro" value="pro" formControlName="plan">
+                <img src="assets/images/icon-pro.svg">
+                <div class="label-container">
+                    <span class="title">Pro</span>
+                    <span class="subtitle">$15/mo</span>
+                </div>
+            </div>
+
+        </div>
+
+        <app-slide-element></app-slide-element>
+
+    </form>
+
+    <ng-container id="action-buttons">
+        <button class="form-button" (click)="submitForm(form, true)">Next Step</button>
+        <span class="form-go-back" (click)="submitForm(form, false)">Go Back</span>
+    </ng-container>
+
+</app-wrapper-form>

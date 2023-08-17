@@ -1,0 +1,32 @@
+<app-wrapper-form *ngIf="stepForm" [currentStep]="0" [title]="'Personal info'" [subtitle]="'Please provide your name, email address, and phone number.'">
+
+    <form #form="ngForm" [formGroup]="stepForm" (ngSubmit)="navigate()">
+
+        <div class="input-group">
+    
+            <label for="name">Name</label>
+            <input type="text" id="name" placeholder="e.g. Stephen King" formControlName="name">
+        
+        </div>
+        
+        <div class="input-group">
+        
+            <label for="email">Email Address</label>
+            <input type="email" id="email" placeholder="e.g. stephenking@lorem.com" formControlName="email">
+        
+        </div>
+        
+        <div class="input-group">
+        
+            <label for="phone">Phone Number</label>
+            <input type="text" id="phone" placeholder="e.g. +1 234 567 890" formControlName="phone">
+        
+        </div>
+
+    </form>
+
+    <ng-container id="action-buttons">
+        <button class="form-button" (click)="submitForm(form)">Next Step</button>
+    </ng-container>
+
+</app-wrapper-form>
