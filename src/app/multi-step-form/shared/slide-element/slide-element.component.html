@@ -1,7 +1,7 @@
-<div class="slide-container">
+<div *ngIf="form && options.length > 1" class="slide-container" [formGroup]="form">
 
-    <label for="monthly">Monthly</label>
-    <input type="radio" id="monthly" value="monthly">
+    <label [for]="options[0].value" [ngClass]="{'active-slide': form.get(controlName)?.value == options[0].value}">{{ options[0].label }}</label>
+    <input type="radio" [id]="options[0].value" [value]="options[0].value" [name]="controlName" [formControlName]="controlName" (change)="toggleViewValue()">
 
     <div class="slide-element-container">
         <span class="slide-element-first-circle"></span>
@@ -12,7 +12,7 @@
         </div>
     </div>
 
-    <label for="yearly">Yearly</label>
-    <input type="radio" id="yearly" value="yearly">
+    <label [for]="options[1].value" [ngClass]="{'active-slide': form.get(controlName)?.value == options[1].value}">{{ options[1].label }}</label>
+    <input type="radio" [id]="options[1].value" [value]="options[1].value" [name]="controlName" [formControlName]="controlName" (change)="toggleViewValue()">
 
 </div>

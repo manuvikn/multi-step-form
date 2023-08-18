@@ -1,0 +1,62 @@
+<app-wrapper-form *ngIf="stepForm" [currentStep]="2" [title]="'Pick add-ons'"
+    [subtitle]="'Add-ons help enhance your gaming experience.'">
+
+    <form #form="ngForm" [formGroup]="stepForm" (ngSubmit)="navigate($event)">
+
+        <div class="check-input-group">
+
+            <div class="check-item" [ngClass]="{'check-active': stepForm.get('onlineService')?.value === true}">
+
+                <label for="onlineService"></label>
+                <div class="check-column">
+                    <input type="checkbox" id="onlineService" formControlName="onlineService">
+                    <div class="label-container">
+                        <span class="check-title">Online service</span>
+                        <span class="check-subtitle">Access to multiplayer games</span>
+                    </div>
+                </div>
+
+                <span class="check-price">+$1/mo</span>
+
+            </div>
+            
+            <div class="check-item" [ngClass]="{'check-active': stepForm.get('largerStorage')?.value === true}">
+
+                <label for="largerStorage"></label>
+                <div class="check-column">
+                    <input type="checkbox" id="largerStorage" formControlName="largerStorage">
+                    <div class="label-container">
+                        <span class="check-title">Larger storage</span>
+                        <span class="check-subtitle">Extra 1TB of cloud save</span>
+                    </div>
+                </div>
+
+                <span class="check-price">+$2/mo</span>
+
+            </div>
+
+            <div class="check-item" [ngClass]="{'check-active': stepForm.get('customizable')?.value === true}">
+
+                <label for="customizable"></label>
+                <div class="check-column">
+                    <input type="checkbox" id="customizable" formControlName="customizable">
+                    <div class="label-container">
+                        <span class="check-title">Customizable profile</span>
+                        <span class="check-subtitle">Custom theme on your profile</span>
+                    </div>
+                </div>
+
+                <span class="check-price">+$2/mo</span>
+
+            </div>
+
+        </div>
+
+    </form>
+
+    <ng-container id="action-buttons">
+        <button class="form-button" (click)="submitForm(form, true)">Next Step</button>
+        <span class="form-go-back" (click)="submitForm(form, false)">Go Back</span>
+    </ng-container>
+
+</app-wrapper-form>

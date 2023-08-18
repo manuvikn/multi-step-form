@@ -13,7 +13,7 @@
         flex-direction: column;
         justify-content: space-between;
         color: $marine_blue;
-        height: 95%;
+        min-height: 95%;
         width: 70%;
 
         .form-fields-container {
@@ -60,9 +60,9 @@
 
             }
 
-            .form-confirm {
+            ::ng-deep .form-confirm {
 
-                background-color: $purplish_blue;
+                background-color: $purplish_blue !important;
 
             }
 

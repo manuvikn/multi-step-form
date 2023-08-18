@@ -1,0 +1,96 @@
+@import '/src/assets/styles/colors';
+
+.summary-container {
+
+    display: flex;
+    flex-direction: column;
+    row-gap: 1em;
+
+    .details-container {
+
+        display: flex;
+        flex-wrap: wrap;
+        padding: 1em;
+        justify-content: space-between;
+        align-items: center;
+        row-gap: 1em;
+        border-radius: 5px;
+        background-color: $magnolia;
+        
+        .step-section {
+
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            row-gap: 1em;
+
+            .first-col {
+
+                color: $cool_gray;
+                font-size: 14px;
+                display: flex;
+                flex-direction: column;
+                row-gap: 4px;
+
+                .subtitle {
+
+                    cursor: pointer;
+                    text-decoration: underline;
+
+                } 
+
+            }
+
+            .price-col {
+
+                color: $marine_blue;
+                font-size: 14px;
+
+            }
+
+        }
+
+        hr {
+
+            width: 100%;
+            color: $light_gray;
+            border-radius: 5px;
+            border: 1px solid;
+
+        }
+
+    }
+
+    .total-container {
+
+        display: flex;
+        justify-content: space-between;
+        padding: 1em 1.5em;
+        row-gap: 1em;
+
+        .first-col {
+
+            color: $cool_gray;
+            font-size: 14px;
+
+        }
+
+        .price-col {
+
+            color: $purplish_blue;
+            font-family: ubuntuBoldFont;
+
+        }
+
+    }
+
+}
+
+.title, .second-step-price {
+
+    font-size: 16px !important;
+    color: $marine_blue !important;
+    font-family: ubuntuMediumFont;
+
+}

@@ -79,3 +79,22 @@
     }
 
 }
+
+@media (max-width: 1100px) {
+    
+    .radio-input-group {
+
+        flex-wrap: wrap;
+
+        .radio-item {
+
+            flex-direction: row;
+            column-gap: 1em;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+
+        }
+
+    }
+
+}

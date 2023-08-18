@@ -9,6 +9,8 @@ import { WrapperFormComponent } from './components/wrapper-form/wrapper-form.com
 import { StepOneComponent } from './views/step-one/step-one.component';
 import { StepTwoComponent } from './views/step-two/step-two.component';
 import { SlideElementComponent } from './shared/slide-element/slide-element.component';
+import { StepThreeComponent } from './views/step-three/step-three.component';
+import { StepFourComponent } from './views/step-four/step-four.component';
 
 @NgModule({
     imports: [
@@ -27,7 +29,9 @@ import { SlideElementComponent } from './shared/slide-element/slide-element.comp
         StepOneComponent,
         WrapperFormComponent,
         StepTwoComponent,
-        SlideElementComponent
+        SlideElementComponent,
+        StepThreeComponent,
+        StepFourComponent
     ]
 })
 export class MultiStepFormModule {

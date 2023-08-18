@@ -37,7 +37,11 @@
 
         </div>
 
-        <app-slide-element></app-slide-element>
+        <app-slide-element 
+            [options]="[{value: 'monthly', label: 'Monthly'}, {value: 'yearly', label: 'Yearly'}]"
+            [form]="stepForm"
+            [controlName]="'paymentOption'">
+        </app-slide-element>
 
     </form>
 

@@ -5,7 +5,8 @@ import { FormGroup } from '@angular/forms';
 @Component({
     selector: 'app-multi-step-form',
     templateUrl: './multi-step-form.component.html',
-    styleUrls: ['./multi-step-form.component.scss']
+    styleUrls: ['./multi-step-form.component.scss'],
+    providers: [MultiStepFormService]
 })
 export class MultiStepFormComponent implements OnInit {
 
