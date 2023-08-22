@@ -1,0 +1,18 @@
+<div *ngIf="stepForm" [formGroup]="stepForm" class="check-input-group">
+
+    <div *ngFor="let item of dataForm" class="check-item" [ngClass]="{'check-active': stepForm.get(item['formControl'])?.value === true}">
+
+        <label [for]="item['formControl']"></label>
+        <div class="check-column">
+            <input type="checkbox" [id]="item['formControl']" [formControlName]="item['formControl']">
+            <div class="label-container">
+                <span class="check-title">{{ item['title'] }}</span>
+                <span class="check-subtitle">{{ item['subtitle'] }}</span>
+            </div>
+        </div>
+
+        <span class="check-price">{{ item['price'].label }}</span>
+
+    </div>
+
+</div>

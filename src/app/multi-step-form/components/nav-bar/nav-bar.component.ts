@@ -1,5 +1,5 @@
 import { ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
-import { MultiStepFormService } from '../../multi-step-form.service';
+import { MultiStepFormService } from '../../services/multi-step-form.service';
 import { Subscription } from 'rxjs';
 
 @Component({

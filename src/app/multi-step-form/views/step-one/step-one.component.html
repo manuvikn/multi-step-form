@@ -1,27 +1,36 @@
 <app-wrapper-form *ngIf="stepForm" [currentStep]="0" [title]="'Personal info'" [subtitle]="'Please provide your name, email address, and phone number.'">
 
     <form #form="ngForm" [formGroup]="stepForm" (ngSubmit)="navigate()">
+        
+        <app-input-element
+        [form]="stepForm"
+        [controlName]="'name'"
+        [validated]="validated"
+        [type]="'text'"
+        [placeholder]="'e.g. Stephen King'"
+        [label]="'Name'"
+        [errors]="errors['name']">
+        </app-input-element>
 
-        <div class="input-group">
-    
-            <label for="name">Name</label>
-            <input type="text" id="name" placeholder="e.g. Stephen King" formControlName="name">
+        <app-input-element
+        [form]="stepForm"
+        [controlName]="'email'"
+        [validated]="validated"
+        [type]="'email'"
+        [placeholder]="'e.g. stephenking@lorem.com'"
+        [label]="'Email Address'"
+        [errors]="errors['email']">
+        </app-input-element>
         
-        </div>
-        
-        <div class="input-group">
-        
-            <label for="email">Email Address</label>
-            <input type="email" id="email" placeholder="e.g. stephenking@lorem.com" formControlName="email">
-        
-        </div>
-        
-        <div class="input-group">
-        
-            <label for="phone">Phone Number</label>
-            <input type="text" id="phone" placeholder="e.g. +1 234 567 890" formControlName="phone">
-        
-        </div>
+        <app-input-phone-element
+        [form]="stepForm"
+        [controlName]="'phone'"
+        [validated]="validated"
+        [type]="'text'"
+        [placeholder]="'e.g. +1 234 567 890'"
+        [label]="'Phone Number'"
+        [errors]="errors['phone']">
+        </app-input-phone-element>
 
     </form>
 

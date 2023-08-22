@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MultiStepFormService } from './multi-step-form.service';
+import { MultiStepFormService } from './services/multi-step-form.service';
 import { FormGroup } from '@angular/forms';
 
 @Component({
@@ -15,7 +15,7 @@ export class MultiStepFormComponent implements OnInit {
     constructor(private multiStepFormService: MultiStepFormService) {}
 
     ngOnInit(): void {
-        this.multiStepForm = this.multiStepFormService.initMultiStepForm();        
+        this.multiStepForm = this.multiStepFormService.initMultiStepForm();      
     }
 
 }

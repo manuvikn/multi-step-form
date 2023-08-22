@@ -1,5 +1,6 @@
 import { AfterViewInit, Component, ElementRef, Input, ViewChild } from "@angular/core";
 import { FormGroup } from "@angular/forms";
+import { MultiStepFormService } from "../../services/multi-step-form.service";
 
 @Component({
     selector: 'app-slide-element',
@@ -17,7 +18,7 @@ export class SlideElementComponent implements AfterViewInit {
     private readonly LEFT_VALUE: string = 'move-to-left';
     leftValue: boolean = true;
 
-    constructor() {}
+    constructor(private multiStepFormService: MultiStepFormService) {}
 
     ngAfterViewInit(): void {
         
@@ -31,13 +32,14 @@ export class SlideElementComponent implements AfterViewInit {
 
     toggleValue(): void {
 
-        this.toggleViewValue();
         this.form?.get( this.controlName )?.setValue( this.options.find( ({value}) => value != this.form?.get( this.controlName )?.value )?.value || '' );
+        this.toggleViewValue();
 
     }
 
     toggleViewValue(): void {
 
+        this.multiStepFormService.setPlanType( this.form?.get( this.controlName )?.value );
         if (!this.slideValue) return;
 
         this.leftValue = !this.leftValue;

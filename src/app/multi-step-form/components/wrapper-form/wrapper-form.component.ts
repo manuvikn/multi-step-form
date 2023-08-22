@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from "@angular/core";
-import { MultiStepFormService } from "../../multi-step-form.service";
+import { MultiStepFormService } from "../../services/multi-step-form.service";
 
 @Component({
     selector: 'app-wrapper-form',

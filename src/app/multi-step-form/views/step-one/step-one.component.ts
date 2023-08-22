@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { FormGroup, FormGroupDirective } from "@angular/forms";
-import { MultiStepFormService } from "../../multi-step-form.service";
+import { MultiStepFormService } from "../../services/multi-step-form.service";
 
 @Component({
     selector:'app-step-one',
@@ -9,14 +9,18 @@ import { MultiStepFormService } from "../../multi-step-form.service";
 })
 export class StepOneComponent implements OnInit{
 
+    private readonly FORM_GROUP: string = 'personalInfo';
     private readonly NEXT_STEP_ROUTE: number = 1;
+
+    errors: {[key: string]: string} = {};
     stepForm: FormGroup | undefined;
+    validated: boolean = false;
 
     constructor(private multiStepFormService: MultiStepFormService) {}
 
     ngOnInit(): void {
         
-        this.stepForm = this.multiStepFormService.getFormGroupByName( 'personalInfo' );
+        this.stepForm = this.multiStepFormService.getFormGroupByName( this.FORM_GROUP );
 
     }
 
@@ -28,7 +32,15 @@ export class StepOneComponent implements OnInit{
 
     submitForm(form: FormGroupDirective): void {
 
-        form.ngSubmit.emit();
+        this.validated = true;
+        if (this.stepForm?.valid) form.ngSubmit.emit();
+        else this.generateErrorMessages();
+
+    }
+
+    generateErrorMessages(): void {
+
+        this.errors = {...this.errors, ...this.multiStepFormService.generateErrorMessages( this.FORM_GROUP )};
 
     }
 

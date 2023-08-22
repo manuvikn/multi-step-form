@@ -11,6 +11,10 @@ import { StepTwoComponent } from './views/step-two/step-two.component';
 import { SlideElementComponent } from './shared/slide-element/slide-element.component';
 import { StepThreeComponent } from './views/step-three/step-three.component';
 import { StepFourComponent } from './views/step-four/step-four.component';
+import { CheckGroupElementComponent } from './shared/check-group-element/check-group-element.component';
+import { RadioGroupElementComponent } from './shared/radio-group-element/radio-group-element.component';
+import { InputElementComponent } from './shared/input-element/input-element.component';
+import { InputPhoneElementComponent } from './shared/input-phone-element/input-phone-element.component';
 
 @NgModule({
     imports: [
@@ -31,7 +35,11 @@ import { StepFourComponent } from './views/step-four/step-four.component';
         StepTwoComponent,
         SlideElementComponent,
         StepThreeComponent,
-        StepFourComponent
+        StepFourComponent,
+        CheckGroupElementComponent,
+        RadioGroupElementComponent,
+        InputElementComponent,
+        InputPhoneElementComponent
     ]
 })
 export class MultiStepFormModule {

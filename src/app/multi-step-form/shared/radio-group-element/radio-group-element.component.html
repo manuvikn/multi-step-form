@@ -1,0 +1,21 @@
+<ng-container *ngIf="stepForm && dataForm">
+
+    <span *ngIf="validated && stepForm.get('plan')?.invalid" class="error-message">{{ errors['plan'] }}</span>
+
+    <div class="radio-input-group" [formGroup]="stepForm">
+
+        <div *ngFor="let item of dataForm" class="radio-item" [ngClass]="{'radio-active': stepForm.get( item['formControl'] )?.value == item['value'],
+                'error-input': validated && stepForm.get(item['formControl'])?.invalid}">
+            <label [for]="item['value']"></label>
+            <input type="radio" [id]="item['value']" [value]="item['value']" [formControlName]="item['formControl']">
+            <img [src]="'assets/images/' + item['icon']">
+            <div class="label-container">
+                <span class="title">{{ item['title'] }}</span>
+                <span class="subtitle">{{ item['price'].label }}</span>
+                <span *ngIf="item['price'].offer" class="offer">{{ item['price'].offer }}</span>
+            </div>
+        </div>
+
+    </div>
+
+</ng-container>

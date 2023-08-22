@@ -1,4 +1,4 @@
-import { RouterModule, Routes } from "@angular/router";
+import { Router, RouterModule, Routes } from "@angular/router";
 import { StepOneComponent } from "./views/step-one/step-one.component";
 import { NgModule } from "@angular/core";
 import { StepTwoComponent } from "./views/step-two/step-two.component";
@@ -30,7 +30,11 @@ const ROUTES: Routes = [
 ];
 
 @NgModule({
-    imports: [RouterModule.forRoot(ROUTES)],
+    imports: [RouterModule.forRoot(ROUTES, {initialNavigation: 'disabled'})],
     exports: [RouterModule]
 })
-export class MultiStepFormRoutingModule {}
+export class MultiStepFormRoutingModule {
+    constructor(private router: Router) {
+        router.navigate(['/step-one']);
+    }
+}

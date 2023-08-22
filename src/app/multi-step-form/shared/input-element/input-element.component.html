@@ -1,0 +1,15 @@
+<div *ngIf="form" [formGroup]="form" class="input-group">
+    
+    <label [for]="controlName">
+        <span class="label-content">{{ label }}</span>
+        <span *ngIf="validated && form.get(controlName)?.invalid" class="error-message">{{ errors }}</span>
+    </label>
+    <input 
+    (input)="generateErrorMessages()" 
+    [ngClass]="{'error-input': validated && form.get(controlName)?.invalid}" 
+    [type]="type" 
+    [id]="controlName" 
+    [placeholder]="placeholder" 
+    [formControlName]="controlName">
+
+</div>

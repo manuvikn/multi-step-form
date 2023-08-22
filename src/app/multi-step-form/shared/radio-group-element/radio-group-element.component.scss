@@ -1,0 +1,123 @@
+@import '/src/assets/styles/colors';
+
+.radio-input-group {
+
+    display: flex;
+    align-items: center;
+    column-gap: 1em;
+    row-gap: 1em;
+    margin: 0.5em 0px;
+
+    .radio-item {
+
+        flex-grow: 1;
+        width: 100%;
+        border-radius: 5px;
+        padding: 1em;
+        outline: 1px solid $light_gray;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        row-gap: 3em;
+
+        .label-container {
+
+            display: flex;
+            flex-direction: column;
+            row-gap: 3px;
+
+            .title {
+
+                font-family: ubuntuMediumFont;
+
+            }
+
+            .subtitle {
+
+                color: $cool_gray;
+                font-size: 14px;
+
+            }
+
+            .offer {
+
+                color: $marine_blue;
+                font-size: 13px;
+
+            }
+
+        }
+
+        &:hover {
+            outline-color: $marine_blue;
+        }
+
+        label {
+
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+
+        }
+
+        input {
+
+            display: none;
+
+        }
+
+        img {
+
+            width: 2em;
+            height: 2em;
+
+        }
+
+    }
+
+    .radio-active {
+
+        outline-color: $marine_blue;
+        background-color: $magnolia;
+
+    }
+
+}
+
+@media (max-width: 1100px) {
+    
+    .radio-input-group {
+
+        flex-wrap: wrap;
+
+        .radio-item {
+
+            flex-direction: row;
+            column-gap: 1em;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+
+        }
+
+    }
+
+}
+
+.error-input {
+
+    border-color: $strawberry_red !important;
+    outline-color: $strawberry_red !important;
+
+}
+
+.error-message {
+
+    font-size: 14px;
+    color: $strawberry_red;
+    font-family: ubuntuMediumFont;
+
+}
