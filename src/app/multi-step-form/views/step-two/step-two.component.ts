@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit, ViewChild } from "@angular/core";
 import { FormGroup, FormGroupDirective } from "@angular/forms";
 import { MultiStepFormService } from "../../services/multi-step-form.service";
-import { RadioGroupElementComponent } from "../../shared/radio-group-element/radio-group-element.component";
+import { RadioGroupElementComponent } from "../../custom-inputs/radio-group-element/radio-group-element.component"; 
 import { Subscription } from "rxjs";
 
 @Component({

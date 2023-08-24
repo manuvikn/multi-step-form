@@ -4,7 +4,7 @@
 
         <label [for]="item['formControl']"></label>
         <div class="check-column">
-            <input type="checkbox" [id]="item['formControl']" [formControlName]="item['formControl']">
+            <input type="checkbox" [attr.aria-label]="item['formControl']" [id]="item['formControl']" [formControlName]="item['formControl']">
             <div class="label-container">
                 <span class="check-title">{{ item['title'] }}</span>
                 <span class="check-subtitle">{{ item['subtitle'] }}</span>

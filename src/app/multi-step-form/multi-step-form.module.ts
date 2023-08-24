@@ -8,21 +8,18 @@ import { MultiStepFormRoutingModule } from './multi-step-form.routing.module';
 import { WrapperFormComponent } from './components/wrapper-form/wrapper-form.component';
 import { StepOneComponent } from './views/step-one/step-one.component';
 import { StepTwoComponent } from './views/step-two/step-two.component';
-import { SlideElementComponent } from './shared/slide-element/slide-element.component';
 import { StepThreeComponent } from './views/step-three/step-three.component';
 import { StepFourComponent } from './views/step-four/step-four.component';
-import { CheckGroupElementComponent } from './shared/check-group-element/check-group-element.component';
-import { RadioGroupElementComponent } from './shared/radio-group-element/radio-group-element.component';
-import { InputElementComponent } from './shared/input-element/input-element.component';
-import { InputPhoneElementComponent } from './shared/input-phone-element/input-phone-element.component';
 import { ThankYouComponent } from './views/thank-you/thank-you.component';
+import { CustomInputsModule } from './custom-inputs/custom-inputs.module';
 
 @NgModule({
     imports: [
         CommonModule,
         FormsModule,
         ReactiveFormsModule,
-        MultiStepFormRoutingModule
+        MultiStepFormRoutingModule,
+        CustomInputsModule
     ],
     exports: [
         MultiStepFormComponent
@@ -34,13 +31,8 @@ import { ThankYouComponent } from './views/thank-you/thank-you.component';
         StepOneComponent,
         WrapperFormComponent,
         StepTwoComponent,
-        SlideElementComponent,
         StepThreeComponent,
         StepFourComponent,
-        CheckGroupElementComponent,
-        RadioGroupElementComponent,
-        InputElementComponent,
-        InputPhoneElementComponent,
         ThankYouComponent
     ]
 })

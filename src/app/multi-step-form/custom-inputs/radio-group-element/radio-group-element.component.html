@@ -8,7 +8,7 @@
                 'error-input': validated && stepForm.get(item['formControl'])?.invalid}">
             <label [for]="item['value']"></label>
             <input type="radio" [id]="item['value']" [value]="item['value']" [formControlName]="item['formControl']">
-            <img [src]="'assets/images/' + item['icon']">
+            <img [src]="'assets/images/' + item['icon']" [attr.alt]="item['value'] + ' image'">
             <div class="label-container">
                 <span class="title">{{ item['title'] }}</span>
                 <span class="subtitle">{{ item['price'].label }}</span>
