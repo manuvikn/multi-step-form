@@ -2,18 +2,26 @@
 
     <div class="form-fields-container">
 
-        <h1 class="form-title">{{ title }}</h1>
+        <ng-container *ngIf="isFormStep">
 
-        <p class="form-sub-title">{{ subtitle }}</p>
+            <h1 class="form-title">{{ title }}</h1>
+    
+            <p class="form-sub-title">{{ subtitle }}</p>
+
+        </ng-container>
 
         <ng-content></ng-content>
 
     </div>
 
-    <div class="submit-container">
+    <ng-container *ngIf="isFormStep">
+        
+        <div class="submit-container">
+    
+            <ng-content select="#action-buttons"></ng-content>
+    
+        </div>
 
-        <ng-content select="#action-buttons"></ng-content>
-
-    </div>
+    </ng-container>
 
 </div>

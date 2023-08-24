@@ -4,6 +4,7 @@ import { NgModule } from "@angular/core";
 import { StepTwoComponent } from "./views/step-two/step-two.component";
 import { StepThreeComponent } from "./views/step-three/step-three.component";
 import { StepFourComponent } from "./views/step-four/step-four.component";
+import { ThankYouComponent } from "./views/thank-you/thank-you.component";
 
 const ROUTES: Routes = [
     {
@@ -21,6 +22,10 @@ const ROUTES: Routes = [
     {
         path: 'summary',
         component: StepFourComponent
+    },
+    {
+        path: 'thank-you',
+        component: ThankYouComponent
     },
     {
         path: '**',

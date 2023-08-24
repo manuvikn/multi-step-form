@@ -43,8 +43,8 @@
     </div>
 
     <ng-container id="action-buttons">
-        <button class="form-button form-confirm">Confirm</button>
-        <span class="form-go-back" (click)="goBack()">Go Back</span>
+        <button class="form-button form-confirm" (click)="navigate(true)">Confirm</button>
+        <span class="form-go-back" (click)="navigate(false)">Go Back</span>
     </ng-container>
 
 </app-wrapper-form>

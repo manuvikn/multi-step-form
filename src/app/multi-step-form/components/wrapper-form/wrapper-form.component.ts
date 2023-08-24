@@ -11,6 +11,7 @@ export class WrapperFormComponent implements OnInit {
     @Input() title: string = '';
     @Input() subtitle: string = '';
     @Input() currentStep: number | undefined;
+    @Input() isFormStep: boolean = true;
 
     constructor(private multiStepFormService: MultiStepFormService) {}
 

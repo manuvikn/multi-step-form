@@ -15,6 +15,7 @@ import { CheckGroupElementComponent } from './shared/check-group-element/check-g
 import { RadioGroupElementComponent } from './shared/radio-group-element/radio-group-element.component';
 import { InputElementComponent } from './shared/input-element/input-element.component';
 import { InputPhoneElementComponent } from './shared/input-phone-element/input-phone-element.component';
+import { ThankYouComponent } from './views/thank-you/thank-you.component';
 
 @NgModule({
     imports: [
@@ -39,7 +40,8 @@ import { InputPhoneElementComponent } from './shared/input-phone-element/input-p
         CheckGroupElementComponent,
         RadioGroupElementComponent,
         InputElementComponent,
-        InputPhoneElementComponent
+        InputPhoneElementComponent,
+        ThankYouComponent
     ]
 })
 export class MultiStepFormModule {

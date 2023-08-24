@@ -19,6 +19,7 @@ export class MultiStepFormService {
         '/step-two',
         '/step-three',
         '/summary',
+        '/thank-you'
     ];
     private readonly CHECK_GROUP_DATA: Array<any> = [
         {
@@ -159,6 +160,12 @@ export class MultiStepFormService {
             })
 
         });
+
+        return this.multiStepForm;
+
+    }
+
+    getMultiStepForm(): FormGroup | undefined {
 
         return this.multiStepForm;
 
